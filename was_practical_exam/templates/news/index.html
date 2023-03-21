@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <style>
+            h1 {text-align: center;}
+            body {background-color: yellow;}
+        </style>
+        <title>School News</title>
+    </head>
+
+    <body>
+        <h1>School News</h1>
+        <div>
+            <strong>{{ boldmessage }}</strong><br />
+        </div>
+
+
+
+        <div>
+            {% if articles %}
+                <ul>
+                    {% for article in articles %}
+                        <h1 style="text-align: left";>{{article.title}}</h1><br>
+
+                        <i>by {{article.author}}. {{article.date}}</i> <br>
+
+                        <p>{{article.description}}</p>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no articles present.</strong>
+            {% endif %}
+        </div>
+
+
+</body>
+</html>
+
+
