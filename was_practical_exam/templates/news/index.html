@@ -5,25 +5,30 @@
     <head>
         <style>
             h1 {text-align: center;}
-            body {background-color: yellow;}
+            body {background-color: yellow;
+                margin: 20px;
+                padding: 50px;
+            }
+
         </style>
         <title>School News</title>
     </head>
 
     <body>
+
         <h1>School News</h1>
 
-        <div>
+        <div style="background-color: green">
             {% if articles %}
-                <ul>
-                    {% for article in articles %}
-                        <h1 style="text-align: left";>{{article.title}}</h1><br>
 
-                        <i>by {{article.author}}. {{article.date}}</i> <br>
+                {% for article in articles %}
+                    <h1 style="text-align: left";>{{article.title}}</h1><br>
 
-                        <p>{{article.description}}</p>
-                    {% endfor %}
-                </ul>
+                    <i>by {{article.author}}. {{article.date}}</i> <br>
+
+                    <p>{{article.description}}</p>
+                {% endfor %}
+
             {% else %}
                 <strong>There are no articles present.</strong>
             {% endif %}
@@ -32,5 +37,4 @@
 
 </body>
 </html>
-
 
